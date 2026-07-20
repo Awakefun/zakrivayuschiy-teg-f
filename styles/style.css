@@ -13,4 +13,49 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  inline-size: var(--main-width);
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-family-main), sans-serif;
+  font-variation-settings: 'wght' var(--font-weight-main);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  padding: var(--padding-header);
+  margin-block: 100px;
+  border: 2px solid #000;
+  text-align: center;
+  background-color: #fff;
+  font-family: var(--font-family-accent), sans-serif;
+}
+
+.header-title {
+  font-size: var(--header-title-size);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.header-text {
+  font-size: var(--header-text-size);
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.card-title {
+  font-variation-settings: 'wght' var(--font-weight-accent);
+  font-size: var(--card-font-size);
+  padding: 4px 10px;
+ }
+
+ .card-text {
+  font-weight: var(--font-weight-main);
+  font-size: var(--card-font-size);
+ }
