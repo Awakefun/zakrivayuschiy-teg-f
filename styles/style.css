@@ -25,7 +25,8 @@
 
 .header {
   padding: var(--padding-header);
-  margin-block: 100px;
+  margin-block-start: 100px;
+  margin-block-end: 98px;
   border: 2px solid #000;
   text-align: center;
   background-color: #fff;
@@ -60,7 +61,7 @@
   font-weight: var(--font-weight-main);
   font-size: var(--card-font-size);
   padding: var(--main-gap);
-  line-height: 22px
+  line-height: 21px
 }
 
 .card-text:not(:first-of-type) {
@@ -70,7 +71,35 @@
 .card-image {
   display: block;
   width: 100%;
-  block-size: 696px;
+  block-size: 700px;
+}
+
+.filter-brightness {
+    filter: brightness(60%);
+}
+
+.filter-contrast {
+    filter: contrast(150%);
+}
+
+.filter-blur {
+    filter: blur(0.1rem);
+}
+
+.filter-grayscale {
+    filter: grayscale(0.8);
+}
+
+.filter-saturate {
+    filter: saturate(150%);
+}
+
+.filter-hue-rotate {
+    filter: hue-rotate(230deg);
+}
+
+.filter-sepia {
+    filter: sepia(80%);
 }
 
 .card__like_block {
@@ -104,6 +133,7 @@
 }
 
 .card-image-label {
+  z-index: 1;
   font-family: var(--font-family-accent);
   font-size: var(--button-font-size);
   position: absolute;
@@ -129,14 +159,83 @@
 
 .save__button {
   display: flex;
-  align-self: center;
+  margin: auto;
+  margin-bottom: 100px;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 8px;
+  padding: 17px 20px;
+  border: 2px solid var(--button-like-color);
 
 }
 
 .save__floppy-svg {
   width: 21px;
   height: 21px;
+}
+
+.save__dialog {
+  padding: 30px;
+  border: 2px solid var(--button-like-color);
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  min-height: 191px;
+  gap: 30px;
+}
+
+.save__dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.save__dialog::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.save__dialog-container {
+  display: flex;
+  gap: 20px;
+}
+
+.save__dialog-floppy-svg {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.save__dialog-text {
+  font-family: var(--font-family-accent);
+  font-size: var(--button-font-size);
+  line-height: 150%;
+  text-transform: uppercase;
+  width: 90%;
+}
+
+.save__dialog-button {
+  padding: 9px 17px;
+  border: 2px solid var(--button-like-color);
+  inline-size: 100%;
+}
+
+.save__button-text {
+  font-family: var(--font-family-accent);
+  font-size: var(--button-font-size);
+  line-height: 90%;
+  display: block;
+}
+
+@media (width <= 375px) {
+  .card-image {
+    block-size: 375px;
+  }
+
+  .save__button {
+    flex-direction: column;
+  }
+
+  .save__floppy-svg {
+    inline-size: 28px;
+    block-size: 28px;
+  }
 }
