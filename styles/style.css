@@ -106,12 +106,24 @@
   display: flex;
   justify-content: end;
   padding: 0 var(--main-gap) var(--main-gap) 0;
+  gap: 6px;
 }
 
 .card__icon-button {
-  border: none;
+  border: 2px solid transparent;
   background-color: transparent;
   max-block-size: 38px;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--button-like-color);
 }
 
 .card__like-button {
@@ -121,11 +133,45 @@
   min-block-size: 38px;
   min-inline-size: 130px;
   height: min-content;
+  cursor: pointer;
+}
+
+.decorate-button {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.decorate-button:focus {
+  outline: none;
+}
+
+.decorate-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--button-like-color);
+}
+
+.decorate-button::before {
+  content: '';
+  background-color: var(--button-like-color);
+  position: absolute;
+  transition: scale 0.5s ease-in-out;
+  transform-origin: left;
+  scale: 0 1;
+  inset: 0;
+  z-index: 0;
+}
+
+.decorate-button:hover::before {
+  scale: 1 1;
 }
 
 .button__text {
+  position: relative;
   font-family: var(--font-family-accent), sans-serif;
   font-size: var(--button-font-size);
+  display: block;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: var(--button-text-color);
 }
 
 .card-image-container {
@@ -166,12 +212,14 @@
   gap: 8px;
   padding: 17px 20px;
   border: 2px solid var(--button-like-color);
-
+  cursor: pointer;
 }
 
 .save__floppy-svg {
   width: 21px;
   height: 21px;
+  fill: #fff;
+  mix-blend-mode: difference;
 }
 
 .save__dialog {
@@ -216,13 +264,11 @@
   padding: 9px 17px;
   border: 2px solid var(--button-like-color);
   inline-size: 100%;
+  cursor: pointer;
 }
 
-.save__button-text {
-  font-family: var(--font-family-accent);
-  font-size: var(--button-font-size);
-  line-height: 90%;
-  display: block;
+.sparks {
+  opacity: 0;
 }
 
 @media (width <= 375px) {
