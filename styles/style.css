@@ -97,8 +97,8 @@
   filter: hue-rotate(230deg);
 }
 
-.filter-sepia {
-  filter: sepia(80%);
+.filter-sepia-contrast {
+  filter: sepia(80%) contrast(150%);
 }
 
 .card__like_block {
