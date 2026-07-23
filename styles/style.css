@@ -26,7 +26,7 @@
   padding: var(--padding-header);
   margin-block-start: 100px;
   margin-block-end: 98px;
-  border: 2px solid #000;
+  border: 2px solid var(--main-color);
   text-align: center;
   background-color: #fff;
   font-family: var(--font-family-accent), sans-serif;
@@ -46,7 +46,7 @@
 
 .card {
   background-color: #fff;
-  border: 2px solid #000;
+  border: 2px solid var(--main-color);
   margin-bottom: 50px;
 }
 
@@ -71,6 +71,8 @@
   display: block;
   width: 100%;
   block-size: 700px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .filter-brightness {
@@ -175,6 +177,7 @@
 
 .card-image-container {
   position: relative;
+  outline: 2px solid var(--main-color);
 }
 
 .card-image-label {
@@ -212,6 +215,7 @@
   padding: 17px 20px;
   border: 2px solid var(--button-like-color);
   cursor: pointer;
+  background-color: var(--button-text-color);
 }
 
 .save__floppy-svg {
@@ -264,6 +268,11 @@
   border: 2px solid var(--button-like-color);
   inline-size: 100%;
   cursor: pointer;
+  background-color: var(--button-text-color);
+}
+
+.decorated-text {
+  text-transform: uppercase;
 }
 
 .contour {
@@ -338,5 +347,9 @@
   .save__floppy-svg {
     inline-size: 28px;
     block-size: 28px;
+  }
+
+  .save__dialog {
+    padding: 30px 40px;
   }
 }
